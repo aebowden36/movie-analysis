@@ -1,4 +1,4 @@
-var full_data = d3.csv("MoviesOnStreamingPlatforms_updated.csv").then(function (data) {
+var full_data = d3.csv("Resources/MoviesOnStreamingPlatforms_updated.csv").then(function (data) {
     for (var i = 0; i < data.length; i++) {
         var id = parseInt(data[i].ID)
         var title = data[i].Title
@@ -34,3 +34,4 @@ var full_data = d3.csv("MoviesOnStreamingPlatforms_updated.csv").then(function (
         }
     };
 })
+
