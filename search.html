@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-​
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-​
+
 <body>
-​
+
     <div class="navigationbar">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <a href="index.html" class="navbar-brand" class="home_button" id="temporaryID">Home</a>
@@ -23,27 +23,24 @@
             </button>
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav ml-auto">
-​
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Search</a>
+                            <a href="Ratings.html" class="nav-link">Ratings Across Platforms</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Visualizations</a>
+                            <a href="Runtime.html" class="nav-link">Relationships with Ratings</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">idk dude, it's whatever the last page needs to be</a>
+                            <a href="Genres.html" class="nav-link">Relationship with Genres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="search.html" class="nav-link">Search for a Movie</a>
                         </li>
                     </ul>
                 </ul>
             </div>
         </nav>
-    </div>
-​
-​
-​
-​
-​
+    </div>​
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -52,10 +49,6 @@
         </div>
         <div class="row">
             <div class="col-md-6" id="movie_search_box">
-​
-​
-​
-​
                 <input id="user_input" type="text">
                 <input id="enter_button" type="button" value="Search" onClick="getMovieTitle()">
                 <br><br><br>
@@ -74,15 +67,8 @@
                 </div>
                 <div id="is_on_disneyPlus" style="white-space:nowrap">
                     <p style="display:inline">Disney+ availability:</p>
-                </div>
-​
-​
-​
-​
-​
-​
+                </div>​
             </div>
-​
             <div class="col-md-6">
                 <div id="movie_poster">
                     <p style="text-align:center">Movie Poster Picture:</p>
@@ -90,20 +76,14 @@
                         src="https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=945&q=80"
                         alt="Movie Image" height="720" width="480">
                 </div>
-​
-​
             </div>
         </div>
-​
     </div>
     </div>
-​
-​
     <div id="footer">
         <p>The Coding Boot Camp&copy;2021</p>
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" src="search.js"></script>
 </body>
-​
 </html>
