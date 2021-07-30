@@ -103,7 +103,7 @@ function buildPlot() {
       
       var data = [traceNetflix, traceHulu, tracePrime, traceDisney]
       var layout = {
-        title: "imdb ratings vs rotten tomatoes ratings"
+        title: "IMDb Ratings Across Platforms"
       }
       Plotly.newPlot("plot", data, layout);
     })
