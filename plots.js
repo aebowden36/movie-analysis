@@ -31,7 +31,7 @@ function buildPlot() {
         var year = parseInt(data[i].Year)
         var age = data[i].Age
         var imdb = parseFloat(data[i].IMDb)
-        var rottenTomatoes = data[i]["Rotten Tomatoes"]
+        var rottenTomatoes = parseInt(data[i]["Rotten Tomatoes"])
         var netflix = data[i].Netflix
         var hulu = data[i].Hulu
         var primeVideo = data[i]["Prime Video"]
@@ -177,27 +177,31 @@ function buildPlot() {
       console.log(primeRottenAverage)
       console.log(disneyRottenAverage)
       
+      var netflixRottenAverageBar = [netflixRottenAverage]
+      var huluRottenAverageBar = [huluRottenAverage]
+      var primeRottenAverageBar = [primeRottenAverage]
+      var disneyRottenAverageBar = [disneyRottenAverage]
       var traceNetflixRot = {
         x: netflixList,
-        y: netflixRottenAverage,
+        y: netflixRottenAverageBar,
         type: 'bar'
       }
   
       var traceHuluRot = {
         x: huluList,
-        y: huluRottenAverage,
+        y: huluRottenAverageBar,
         type: 'bar'
       }
   
       var tracePrimeRot = {
         x: primeVideoList,
-        y: primeRottenAverage,
+        y: primeRottenAverageBar,
         type: 'bar'
       }
   
       var traceDisneyRot = {
         x: disneyPlusList,
-        y: disneyRottenAverage,
+        y: disneyRottenAverageBar,
         type: 'bar'
       }
       
