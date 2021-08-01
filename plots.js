@@ -113,46 +113,62 @@ function buildPlot() {
       const disneyLen = disneyImdbFilter.length
       const disneyImdbSum = disneyImdbFilter.reduce((sum, val) => (sum += val))
       const disneyImdbAverage = disneyImdbSum/disneyLen
-
+// Calculate IMDb ratings that match Rotten Tomatoes Rating Measurement
       var netflixMatch = [netflixImdbAverage*10]
       var huluMatch = [huluImdbAverage*10]
       var primeMatch = [primeImdbAverage*10]
       var disneyMatch = [disneyImdbAverage*10]
+      // Verify Calculations
       console.log(netflixMatch)
       console.log(huluMatch)
       console.log(primeMatch)
       console.log(disneyMatch)
-        // create trace for bar chart
+        // create trace for imdb bar chart
       var traceNetflix = {
         x: netflixList,
         y: netflixMatch,
+        marker: {
+          color: 'rgb(247, 33, 17)'
+        },
         type: 'bar'
       }
   
       var traceHulu = {
         x: huluList,
         y: huluMatch,
+        marker: {
+          color: 'rgb(57, 204, 12)'
+        },
         type: 'bar'
       }
   
       var tracePrime = {
         x: primeVideoList,
         y: primeMatch,
+        marker: {
+          color: 'rgb(29, 167, 222)'
+        },
         type: 'bar'
       }
   
       var traceDisney = {
         x: disneyPlusList,
         y: disneyMatch,
+        marker: {
+          color: 'rgb(88, 13, 217)'
+        },
         type: 'bar'
       }
       
       var data = [traceNetflix, traceHulu, tracePrime, traceDisney]
       var layout = {
-        title: "Average IMDb Ratings Across Platforms"
+        title: "Average IMDb Ratings Across Platforms",
+        showlegend: false,
+        xaxis: {title: "Streaming Platform"},
+        yaxis: {title: "Average IMDb Rating (%)"}
       }
       Plotly.newPlot("plot1", data, layout);
-
+// calculate rotten tomatoes averages
       const netflixRottenFilter = netflixRotten.filter(val => !!val);
       const netflixRotLen = netflixRottenFilter.length
       const netflixRottenSum = netflixRottenFilter.reduce((sum, val) => (sum += val))
@@ -172,44 +188,92 @@ function buildPlot() {
       const disneyRotLen = disneyRottenFilter.length
       const disneyRottenSum = disneyRottenFilter.reduce((sum, val) => (sum += val))
       const disneyRottenAverage = disneyRottenSum/disneyRotLen
-      console.log(netflixRottenAverage)
-      console.log(huluRottenAverage)
-      console.log(primeRottenAverage)
-      console.log(disneyRottenAverage)
+      // console.log(netflixRottenAverage)
+      // console.log(huluRottenAverage)
+      // console.log(primeRottenAverage)
+      // console.log(disneyRottenAverage)
       
       var netflixRottenAverageBar = [netflixRottenAverage]
       var huluRottenAverageBar = [huluRottenAverage]
       var primeRottenAverageBar = [primeRottenAverage]
       var disneyRottenAverageBar = [disneyRottenAverage]
+      // create trace for rotten tomatoes bar chart
       var traceNetflixRot = {
         x: netflixList,
         y: netflixRottenAverageBar,
+        marker: {
+          color: 'rgb(247, 33, 17)'
+        },
         type: 'bar'
       }
   
       var traceHuluRot = {
         x: huluList,
         y: huluRottenAverageBar,
+        marker: {
+          color: 'rgb(57, 204, 12)'
+        },
         type: 'bar'
       }
   
       var tracePrimeRot = {
         x: primeVideoList,
         y: primeRottenAverageBar,
+        marker: {
+          color: 'rgb(29, 167, 222)'
+        },
         type: 'bar'
       }
   
       var traceDisneyRot = {
         x: disneyPlusList,
         y: disneyRottenAverageBar,
+        marker: {
+          color: 'rgb(88, 13, 217)'
+        },
         type: 'bar'
       }
       
       var data = [traceNetflixRot, traceHuluRot, tracePrimeRot, traceDisneyRot]
       var layout = {
-        title: "Average Rotten Tomatoes Ratings Across Platforms"
+        title: "Average Rotten Tomatoes Ratings Across Platforms",
+        showlegend: false,
+        xaxis: {title: "Streaming Platform"},
+        yaxis: {title: "Average Rotten Tomatoes Rating (%)"}
       }
       Plotly.newPlot("plot2", data, layout);
+
+      var xAxis = [netflixRottenAverage, huluRottenAverage, primeRottenAverage, disneyRottenAverage, netflixMatch[0], huluMatch[0], primeMatch[0], disneyMatch[0]]
+      var yAxis = [netflixRotLen, huluRotLen, primeRotLen, disneyRotLen, netflixLen, huluLen, primeLen, disneyLen]
+      // create trace for bubble chart
+      var bubbleTrace = {
+        x: xAxis,
+        y: yAxis,
+        mode: 'markers',
+        marker: {
+          color: ['rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)', 'rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)'],
+          opacity: [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
+          size: 80,
+          line: {
+            color: ['rgb(0, 0, 0)', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)'],
+            width: [2, 2, 2, 2, 2, 2, 2, 2]
+          }
+        }
+      }
+
+      var bubbleData = [bubbleTrace];
+
+      var bubbleLayout = {
+        title: 'Ratings vs. Number of Movies',
+        xaxis: {title: "Average Ratings"},
+        yaxis: {title: "Total Number of Movies"},
+        showlegend: false,
+        height: 600,
+        width: 800
+      };
+
+      Plotly.newPlot('plot3', bubbleData, bubbleLayout);
+      
     })
   }
   buildPlot();
