@@ -273,7 +273,7 @@ function buildPlot() {
       };
 
       Plotly.newPlot('plot3', bubbleData, bubbleLayout);
-      
+      console.log(genres)
     })
   }
   buildPlot();
