@@ -202,7 +202,7 @@ function buildPlot() {
         x: netflixList,
         y: netflixRottenAverageBar,
         marker: {
-          color: 'rgb(201, 6, 74)'
+          color: 'rgb(130, 18, 44)'
         },
         type: 'bar'
       }
@@ -211,7 +211,7 @@ function buildPlot() {
         x: huluList,
         y: huluRottenAverageBar,
         marker: {
-          color: 'rgb(14, 153, 18)'
+          color: 'rgb(18, 117, 28)'
         },
         type: 'bar'
       }
@@ -220,7 +220,7 @@ function buildPlot() {
         x: primeVideoList,
         y: primeRottenAverageBar,
         marker: {
-          color: 'rgb(17, 168, 163)'
+          color: 'rgb(18, 91, 120)'
         },
         type: 'bar'
       }
@@ -229,7 +229,7 @@ function buildPlot() {
         x: disneyPlusList,
         y: disneyRottenAverageBar,
         marker: {
-          color: 'rgb(86, 24, 158)'
+          color: 'rgb(74, 16, 110)'
         },
         type: 'bar'
       }
@@ -251,7 +251,7 @@ function buildPlot() {
         y: yAxis,
         mode: 'markers',
         marker: {
-          color: ['rgb(201, 6, 74)', 'rgb(14, 153, 18)', 'rgb(17, 168, 163)', 'rgb(86, 24, 158)', 'rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)'],
+          color: ['rgb(130, 18, 44)', 'rgb(18, 117, 28)', 'rgb(18, 91, 120)', 'rgb(74, 16, 110)', 'rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)'],
           opacity: [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
           size: 80,
           line: {
