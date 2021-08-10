@@ -24,7 +24,6 @@ function buildPlot() {
       var countryList = []
       var languageList = []
       var runtimeList = []
-      var undefinedGenres = []
       
       for (var i = 0; i < data.length; i++) {
         var id = parseInt(data[i].ID)
@@ -73,90 +72,7 @@ function buildPlot() {
           }
           typeList.push(type)
           directorsList.push(directors)
-          if (genres == "Action"){
-            genresList.push("Action")
-          }
-          else if (genres == "Adventure"){
-            genresList.push("Adventure")
-          }
-          else if (genres == "Animation"){
-            genresList.push("Animation")
-          }
-          else if (genres == "Biography"){
-            genresList.push("Biography")
-          }
-          else if (genres == "Comedy"){
-            genresList.push("Comedy")
-          }
-          else if (genres == "Crime"){
-            genresList.push("Crime")
-          }
-          else if (genres == "Documentary"){
-            genresList.push("Documentary")
-          }
-          else if (genres == "Drama"){
-            genresList.push("Drama")
-          }
-          else if (genres == "Family"){
-            genresList.push("Family")
-          }
-          else if (genres == "Fantasy"){
-            genresList.push("Fantasy")
-          }
-          else if (genres == "Film-Noir"){
-            genresList.push("Film-Noir")
-          }
-          else if (genres == "Game-Show"){
-            genresList.push("Game-Show")
-          }
-          else if (genres == "History"){
-            genresList.push("History")
-          }
-          else if (genres == "Horror"){
-            genresList.push("Horror")
-          }
-          else if (genres == "Music"){
-            genresList.push("Music")
-          }
-          else if (genres == "Musical"){
-            genresList.push("Musical")
-          }
-          else if (genres == "Mystery"){
-            genresList.push("Mystery")
-          }
-          else if (genres == "News"){
-            genresList.push("News")
-          }
-          else if (genres == "Reality-TV"){
-            genresList.push("Reality-TV")
-          }
-          else if (genres == "Romance"){
-            genresList.push("Romance")
-          }
-          else if (genres == "Sci-Fi"){
-            genresList.push("Sci-Fi")
-          }
-          else if (genres == "Short"){
-            genresList.push("Short")
-          }
-          else if (genres == "Sport"){
-            genresList.push("Sport")
-          }
-          else if (genres == "Talk-Show"){
-            genresList.push("Talk-Show")
-          }
-          else if (genres == "Thriller"){
-            genresList.push("Thriller")
-          }
-          else if (genres == "War"){
-            genresList.push("War")
-          }
-          else if (genres == "Western"){
-            genresList.push("Western")
-          }
-          else {
-            undefinedGenres.push("Undefined")
-          }
+          genresList.push(genres)
           countryList.push(country)
           languageList.push(language)
           // runtime values with nothing were set to NaN
@@ -286,7 +202,7 @@ function buildPlot() {
         x: netflixList,
         y: netflixRottenAverageBar,
         marker: {
-          color: 'rgb(247, 33, 17)'
+          color: 'rgb(201, 6, 74)'
         },
         type: 'bar'
       }
@@ -295,7 +211,7 @@ function buildPlot() {
         x: huluList,
         y: huluRottenAverageBar,
         marker: {
-          color: 'rgb(57, 204, 12)'
+          color: 'rgb(14, 153, 18)'
         },
         type: 'bar'
       }
@@ -304,7 +220,7 @@ function buildPlot() {
         x: primeVideoList,
         y: primeRottenAverageBar,
         marker: {
-          color: 'rgb(29, 167, 222)'
+          color: 'rgb(17, 168, 163)'
         },
         type: 'bar'
       }
@@ -313,7 +229,7 @@ function buildPlot() {
         x: disneyPlusList,
         y: disneyRottenAverageBar,
         marker: {
-          color: 'rgb(88, 13, 217)'
+          color: 'rgb(86, 24, 158)'
         },
         type: 'bar'
       }
@@ -335,7 +251,7 @@ function buildPlot() {
         y: yAxis,
         mode: 'markers',
         marker: {
-          color: ['rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)', 'rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)'],
+          color: ['rgb(201, 6, 74)', 'rgb(14, 153, 18)', 'rgb(17, 168, 163)', 'rgb(86, 24, 158)', 'rgb(247, 33, 17)', 'rgb(57, 204, 12)', 'rgb(29, 167, 222)', 'rgb(88, 13, 217)'],
           opacity: [0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
           size: 80,
           line: {
@@ -357,22 +273,6 @@ function buildPlot() {
       };
 
       Plotly.newPlot('plot3', bubbleData, bubbleLayout);
-      console.log(genresList)
-
-      var traceGenres = {
-        x: genresList,
-        y: netflixList.length,
-        type: 'bar'
-      }
-      
-      var data = [traceGenres]
-      var layout = {
-        title: "Netflix Genres",
-        showlegend: false,
-        xaxis: {title: "Genres"},
-        yaxis: {title: "Count"}
-      }
-      Plotly.newPlot("plot4", data, layout);
     })
   }
   buildPlot();
