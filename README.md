@@ -1,4 +1,4 @@
 # movie-analysis
 https://aebowden36.github.io/movie-analysis/
 
-This project aims to analyze data pertaining to movies across four streaming platforms: Netflix, Hulu, Prime Video, and Disney+. A dashboard was created containing four webpages to conduct several analyses. The data was sourced from a csv found on Kaggle (link coming soon), and an API containing information about movies and TV shows on streaming platforms (link coming soon). 
+This project aims to analyze data pertaining to movies across four streaming platforms: Netflix, Hulu, Prime Video, and Disney+. A dashboard was created containing four webpages to conduct several analyses. The data was sourced from a csv found on [Kaggle](https://www.kaggle.com/ruchi798/movies-on-netflix-prime-video-hulu-and-disney), and an [API](https://www.themoviedb.org/documentation/api?language=en-US) containing information about movies and TV shows on streaming platforms. More information about this project can be seen [here](https://docs.google.com/presentation/d/13IHHbEGvcl8oFTBnLDpueoYqq1xTGyxx/edit?usp=sharing&ouid=112557470831034356755&rtpof=true&sd=true).
